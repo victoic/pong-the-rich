@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Pong the Rich"
-config/version="1.1.0.2"
+config/version="1.1.0.3"
 config/tags=PackedStringArray("20games", "communism", "pong", "socialism")
 run/main_scene="uid://b32ys1qcl6g2l"
 config/features=PackedStringArray("4.6", "Forward Plus")
