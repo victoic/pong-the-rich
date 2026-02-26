@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="BarStats" format=3 uid="uid://dq0hrfxthsbwq"]
+
+[ext_resource type="Script" uid="uid://dv6d1juexii0c" path="res://scenes/bar/bar_stats.gd" id="1_5ifq7"]
+
+[resource]
+script = ExtResource("1_5ifq7")

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b72hxqnb38tes"]
+
+[ext_resource type="Script" uid="uid://0rjwdhd2tt4v" path="res://scenes/comrade_point/comrade_point.gd" id="1_jkrvf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c34ar"]
+radius = 15.0
+
+[node name="ComradePoint" type="Node2D" unique_id=1456090087]
+script = ExtResource("1_jkrvf")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=225035414]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1745456527]
+shape = SubResource("CircleShape2D_c34ar")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

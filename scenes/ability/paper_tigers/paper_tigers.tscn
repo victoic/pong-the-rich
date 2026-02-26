@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dlasqsgm8h0ao"]
+
+[ext_resource type="Script" uid="uid://cvvo57uxjinfy" path="res://scenes/ability/paper_tigers/paper_tigers.gd" id="1_p2bel"]
+
+[node name="PaperTigers" type="Node2D" unique_id=1540208526]
+script = ExtResource("1_p2bel")
+is_cooldown = null
+requirement = null
+phrase = null
+metadata/_custom_type_script = "uid://bqnna7264qh0n"
+
+[node name="CooldownTimer" type="Timer" parent="." unique_id=435330207]
+
+[node name="TooltipTimer" type="Timer" parent="." unique_id=1673975392]
+wait_time = 3.0
+
+[connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timer_timeout"]
+[connection signal="timeout" from="TooltipTimer" to="." method="_on_tooltip_timer_timeout"]

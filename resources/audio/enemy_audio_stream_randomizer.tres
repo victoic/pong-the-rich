@@ -1,0 +1,11 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://bgrmaxe3xy5it"]
+
+[ext_resource type="AudioStream" uid="uid://ca0miw68n6e2s" path="res://sounds/enemy_hit/enemy_hit_1.wav" id="1_17n8f"]
+[ext_resource type="AudioStream" uid="uid://4muke5xmysso" path="res://sounds/enemy_hit/enemy_hit_2.wav" id="2_uxmbr"]
+[ext_resource type="AudioStream" uid="uid://dkfuxj35ro32v" path="res://sounds/enemy_hit/enemy_hit_3.wav" id="3_idnhl"]
+
+[resource]
+streams_count = 3
+stream_0/stream = ExtResource("1_17n8f")
+stream_1/stream = ExtResource("2_uxmbr")
+stream_2/stream = ExtResource("3_idnhl")

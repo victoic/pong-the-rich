@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://b32ys1qcl6g2l"]
+
+[ext_resource type="Script" uid="uid://h7rbnmtqehti" path="res://scenes/pong/menu.gd" id="1_glmrg"]
+[ext_resource type="Theme" uid="uid://ddb7rbbc2vqwb" path="res://resources/themes/main_theme.tres" id="2_glmrg"]
+[ext_resource type="StyleBox" uid="uid://lsiykmti55ur" path="res://resources/styles/button_pressed_style.tres" id="2_mom44"]
+[ext_resource type="Texture2D" uid="uid://bbexavc1t4wtf" path="res://images/backgrounds/bg06.png" id="2_oj1v1"]
+
+[node name="Menu" type="Control" unique_id=921753708]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_glmrg")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2119664586]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_oj1v1")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="." unique_id=1964439472]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.097
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.14399719
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_glmrg")
+theme_type_variation = &"Title"
+text = "Pong The Rich"
+horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=2127626203]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1261039792]
+layout_mode = 2
+
+[node name="NewGameButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=255498336]
+layout_mode = 2
+theme = ExtResource("2_glmrg")
+theme_override_styles/pressed = ExtResource("2_mom44")
+text = "New Game"
+
+[node name="ExitButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=744424213]
+layout_mode = 2
+theme = ExtResource("2_glmrg")
+text = "Exit
+"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

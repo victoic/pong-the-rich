@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b7wcp2un8ev5v"]
+
+[ext_resource type="Script" uid="uid://bf14jeia1bubr" path="res://scenes/ability/infiltrate/infiltrate.gd" id="1_jrqv8"]
+
+[node name="Infiltrate" type="Node2D" unique_id=982348908]
+script = ExtResource("1_jrqv8")
+metadata/_custom_type_script = "uid://bqnna7264qh0n"
+
+[node name="CooldownTimer" type="Timer" parent="." unique_id=2139666562]
+wait_time = 10.0
+
+[node name="TooltipTimer" type="Timer" parent="." unique_id=1246378614]
+wait_time = 3.0
+
+[connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timer_timeout"]
+[connection signal="timeout" from="TooltipTimer" to="." method="_on_tooltip_timer_timeout"]

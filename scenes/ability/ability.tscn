@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://now4r14no33l"]
+
+[ext_resource type="Script" uid="uid://bqnna7264qh0n" path="res://scenes/ability/ability.gd" id="1_k5b0n"]
+
+[node name="Ability" type="Node2D" unique_id=58256676]
+script = ExtResource("1_k5b0n")
+metadata/_custom_type_script = "uid://bqnna7264qh0n"
+
+[node name="CooldownTimer" type="Timer" parent="." unique_id=55440915]
+wait_time = 10.0
+
+[node name="TooltipTimer" type="Timer" parent="." unique_id=579898613]
+wait_time = 3.0
+
+[connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timer_timeout"]
+[connection signal="timeout" from="TooltipTimer" to="." method="_on_tooltip_timer_timeout"]

@@ -1,0 +1,215 @@
+[gd_scene format=3 uid="uid://b32ys1qcl6g2l"]
+
+[ext_resource type="Script" uid="uid://h7rbnmtqehti" path="res://scenes/pong/menu.gd" id="1_glmrg"]
+[ext_resource type="Theme" uid="uid://ddb7rbbc2vqwb" path="res://resources/themes/main_theme.tres" id="2_glmrg"]
+[ext_resource type="StyleBox" uid="uid://lsiykmti55ur" path="res://resources/styles/button_pressed_style.tres" id="2_mom44"]
+[ext_resource type="Texture2D" uid="uid://bbexavc1t4wtf" path="res://images/backgrounds/bg06.png" id="2_oj1v1"]
+[ext_resource type="Texture2D" uid="uid://dyiradhfmp7ag" path="res://images/star.png" id="3_oj1v1"]
+[ext_resource type="Script" uid="uid://dae3rhm0vegwo" path="res://scenes/gui/stats_panel.gd" id="6_60p6u"]
+
+[node name="Menu" type="Control" unique_id=921753708]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_glmrg")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2119664586]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_oj1v1")
+expand_mode = 2
+
+[node name="StarTextureRect" type="TextureRect" parent="." unique_id=827908633]
+visible = false
+layout_mode = 0
+offset_left = 253.0
+offset_top = 63.0
+offset_right = 353.0
+offset_bottom = 163.0
+rotation = -0.5235988
+texture = ExtResource("3_oj1v1")
+
+[node name="Label" type="Label" parent="." unique_id=1964439472]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.097
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.14399719
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_glmrg")
+theme_type_variation = &"Title"
+text = "Pong The Rich"
+horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=2127626203]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1261039792]
+layout_mode = 2
+
+[node name="NewGameButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=255498336]
+layout_mode = 2
+theme = ExtResource("2_glmrg")
+theme_override_styles/pressed = ExtResource("2_mom44")
+text = "New Game"
+
+[node name="StatsButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=680980530]
+layout_mode = 2
+theme = ExtResource("2_glmrg")
+theme_override_styles/pressed = ExtResource("2_mom44")
+text = "Stats"
+
+[node name="ExitButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=744424213]
+layout_mode = 2
+theme = ExtResource("2_glmrg")
+text = "Exit
+"
+
+[node name="StatsPanel" type="Panel" parent="." unique_id=109268914]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.347
+anchor_top = 0.321
+anchor_right = 0.651
+anchor_bottom = 0.78400004
+offset_left = 0.25598145
+offset_top = -0.008010864
+offset_right = 0.047973633
+offset_bottom = -0.03201294
+theme = ExtResource("2_glmrg")
+theme_type_variation = &"BlockPanel"
+script = ExtResource("6_60p6u")
+
+[node name="CenterContainer2" type="CenterContainer" parent="StatsPanel" unique_id=514409988]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -62.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="StatsPanel/CenterContainer2" unique_id=1387530433]
+layout_mode = 2
+columns = 2
+
+[node name="TotalWinsLabel" type="Label" parent="StatsPanel/CenterContainer2/GridContainer" unique_id=467130533]
+layout_mode = 2
+theme = ExtResource("2_glmrg")
+theme_type_variation = &"Cutscene"
+text = "Total Wins"
+
+[node name="TotalWinsValue" type="Label" parent="StatsPanel/CenterContainer2/GridContainer" unique_id=374984544]
+layout_mode = 2
+theme = ExtResource("2_glmrg")
+theme_type_variation = &"Cutscene"
+text = "0"
+
+[node name="TotalLossesLabel" type="Label" parent="StatsPanel/CenterContainer2/GridContainer" unique_id=199200210]
+layout_mode = 2
+theme = ExtResource("2_glmrg")
+theme_type_variation = &"Cutscene"
+text = "Total Losses"
+
+[node name="TotalLossesValue" type="Label" parent="StatsPanel/CenterContainer2/GridContainer" unique_id=1219039060]
+layout_mode = 2
+theme = ExtResource("2_glmrg")
+theme_type_variation = &"Cutscene"
+text = "0"
+
+[node name="TotalPlayerPointsLabel" type="Label" parent="StatsPanel/CenterContainer2/GridContainer" unique_id=920151088]
+layout_mode = 2
+theme = ExtResource("2_glmrg")
+theme_type_variation = &"Cutscene"
+text = "Total Wins - Player"
+
+[node name="TotalPlayerPointsValue" type="Label" parent="StatsPanel/CenterContainer2/GridContainer" unique_id=815484868]
+layout_mode = 2
+theme = ExtResource("2_glmrg")
+theme_type_variation = &"Cutscene"
+text = "0"
+
+[node name="TotalEnemyPointsLabel2" type="Label" parent="StatsPanel/CenterContainer2/GridContainer" unique_id=1458559213]
+layout_mode = 2
+theme = ExtResource("2_glmrg")
+theme_type_variation = &"Cutscene"
+text = "Total Score - The Boss"
+
+[node name="TotalEnemyPointsValue2" type="Label" parent="StatsPanel/CenterContainer2/GridContainer" unique_id=264473779]
+layout_mode = 2
+theme = ExtResource("2_glmrg")
+theme_type_variation = &"Cutscene"
+text = "0"
+
+[node name="BestScoreLabel" type="Label" parent="StatsPanel/CenterContainer2/GridContainer" unique_id=934851457]
+layout_mode = 2
+theme = ExtResource("2_glmrg")
+theme_type_variation = &"Cutscene"
+text = "Best Score"
+
+[node name="BestScoreValue" type="Label" parent="StatsPanel/CenterContainer2/GridContainer" unique_id=1419108073]
+layout_mode = 2
+theme = ExtResource("2_glmrg")
+theme_type_variation = &"Cutscene"
+text = "0"
+
+[node name="TotalComradesLabel" type="Label" parent="StatsPanel/CenterContainer2/GridContainer" unique_id=1057744238]
+layout_mode = 2
+theme = ExtResource("2_glmrg")
+theme_type_variation = &"Cutscene"
+text = "Total Comrades"
+
+[node name="TotalComradesValue" type="Label" parent="StatsPanel/CenterContainer2/GridContainer" unique_id=1448770533]
+layout_mode = 2
+theme = ExtResource("2_glmrg")
+theme_type_variation = &"Cutscene"
+text = "0"
+
+[node name="MaxComradesLabel" type="Label" parent="StatsPanel/CenterContainer2/GridContainer" unique_id=250709793]
+layout_mode = 2
+theme = ExtResource("2_glmrg")
+theme_type_variation = &"Cutscene"
+text = "Max. Comrades"
+
+[node name="MaxComradesValue" type="Label" parent="StatsPanel/CenterContainer2/GridContainer" unique_id=145665167]
+layout_mode = 2
+theme = ExtResource("2_glmrg")
+theme_type_variation = &"Cutscene"
+text = "0"
+
+[node name="CenterContainer" type="CenterContainer" parent="StatsPanel" unique_id=735140677]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -62.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="BackToMenuButton" type="Button" parent="StatsPanel/CenterContainer" unique_id=1759842050]
+layout_mode = 2
+theme = ExtResource("2_glmrg")
+theme_type_variation = &"FlatButton"
+text = "Back"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/StatsButton" to="." method="_on_stats_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="StatsPanel/CenterContainer/BackToMenuButton" to="." method="_on_back_to_menu_button_pressed"]

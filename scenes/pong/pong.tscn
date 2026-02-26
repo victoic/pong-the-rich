@@ -1,0 +1,188 @@
+[gd_scene format=3 uid="uid://cf77luj3wvewb"]
+
+[ext_resource type="Script" uid="uid://ci1urcib0qw12" path="res://scenes/pong/pong.gd" id="1_o18ce"]
+[ext_resource type="PackedScene" uid="uid://2eaepsh3erhy" path="res://scenes/bar/player/player.tscn" id="2_8bn03"]
+[ext_resource type="Texture2D" uid="uid://dtvpbsrpbpjtc" path="res://images/backgrounds/bg01.png" id="2_xk3oe"]
+[ext_resource type="PackedScene" uid="uid://d3l00efs8p4hc" path="res://scenes/bar/enemy/enemy.tscn" id="3_8bn03"]
+[ext_resource type="PackedScene" uid="uid://0qss71ok16ci" path="res://scenes/ball/ball.tscn" id="4_8bn03"]
+[ext_resource type="AudioStream" uid="uid://m76xeuosjdyy" path="res://sounds/music/audiomass-output(1).wav" id="5_54acg"]
+[ext_resource type="AudioStream" uid="uid://cq77a3k7mewqh" path="res://sounds/music/audiomass-output(2).wav" id="6_3capb"]
+[ext_resource type="LabelSettings" uid="uid://daptqs4cn8vry" path="res://resources/fonts/main_text.tres" id="6_7yve4"]
+[ext_resource type="Texture2D" uid="uid://bsajpj2fxlthd" path="res://images/buttons/organize.png" id="7_3capb"]
+[ext_resource type="Texture2D" uid="uid://ctyjl02w1vrdb" path="res://images/buttons/paper-tigers.png" id="8_bccs0"]
+[ext_resource type="Theme" uid="uid://ddb7rbbc2vqwb" path="res://resources/themes/main_theme.tres" id="9_7yve4"]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_54acg"]
+stream_count = 2
+stream_0 = ExtResource("5_54acg")
+stream_1 = ExtResource("6_3capb")
+
+[node name="Pong" type="Node2D" unique_id=1712008745]
+script = ExtResource("1_o18ce")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=46884882]
+offset_right = 1150.0
+offset_bottom = 646.0
+texture = ExtResource("2_xk3oe")
+expand_mode = 2
+
+[node name="Divider" type="Polygon2D" parent="." unique_id=1721211342]
+position = Vector2(599, 0)
+polygon = PackedVector2Array(0, 0, 5, 0, 5, 600, 0, 600)
+
+[node name="Player" parent="." unique_id=1848100586 groups=["player"] instance=ExtResource("2_8bn03")]
+position = Vector2(10, 260)
+
+[node name="Enemy" parent="." unique_id=662037036 instance=ExtResource("3_8bn03")]
+position = Vector2(1139, 260)
+
+[node name="Ball" parent="." unique_id=557146403 instance=ExtResource("4_8bn03")]
+position = Vector2(100, 100)
+
+[node name="Comrades" type="Node2D" parent="." unique_id=472225171]
+
+[node name="ComradesPoints" type="Node2D" parent="." unique_id=161525150]
+
+[node name="DebugLabel" type="Label" parent="." unique_id=1016452527]
+visible = false
+offset_left = 4.0
+offset_top = 36.0
+offset_right = 44.0
+offset_bottom = 59.0
+text = "Velocidade:"
+
+[node name="Phrase" type="Label" parent="." unique_id=425232642]
+offset_top = 85.0
+offset_right = 1150.0
+offset_bottom = 195.0
+size_flags_horizontal = 3
+theme = ExtResource("9_7yve4")
+theme_type_variation = &"Text"
+label_settings = ExtResource("6_7yve4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HelpLabel" type="Label" parent="." unique_id=1550762689]
+visible = false
+offset_top = 16.0
+offset_right = 1150.0
+offset_bottom = 126.0
+size_flags_horizontal = 3
+theme = ExtResource("9_7yve4")
+theme_type_variation = &"Cutscene"
+text = "Press <ESC>, <R>, or <Backspace> to Return to the menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=1037475652]
+wait_time = 20.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1973018997]
+stream = SubResource("AudioStreamPlaylist_54acg")
+autoplay = true
+
+[node name="GUI" type="Control" parent="." unique_id=1638844421]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1149.0
+offset_bottom = 646.0
+
+[node name="HSplitContainer" type="HSplitContainer" parent="GUI" unique_id=2013779588]
+layout_mode = 0
+offset_right = 1149.0
+offset_bottom = 95.0
+split_offsets = PackedInt32Array(600)
+split_offset = 600
+
+[node name="ScrollContainer" type="ScrollContainer" parent="GUI/HSplitContainer" unique_id=171268759]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GUI/HSplitContainer/ScrollContainer" unique_id=740203700]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("9_7yve4")
+theme_type_variation = &"Text"
+text = "0"
+label_settings = ExtResource("6_7yve4")
+horizontal_alignment = 1
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="GUI/HSplitContainer" unique_id=1554445217]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="GUI/HSplitContainer/ScrollContainer2" unique_id=1306121787]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("9_7yve4")
+theme_type_variation = &"Text"
+text = "0"
+label_settings = ExtResource("6_7yve4")
+horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="GUI" unique_id=377140552]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 507.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="GUI/CenterContainer" unique_id=1561647113]
+layout_mode = 2
+
+[node name="ButtonGroup" type="HBoxContainer" parent="GUI/CenterContainer/PanelContainer" unique_id=2055182320]
+layout_mode = 2
+alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="GUI/CenterContainer/PanelContainer/ButtonGroup" unique_id=1574124179]
+layout_mode = 2
+
+[node name="OrganizeAbility" type="Button" parent="GUI/CenterContainer/PanelContainer/ButtonGroup/CenterContainer" unique_id=1705649552]
+layout_mode = 2
+disabled = true
+icon = ExtResource("7_3capb")
+flat = true
+icon_alignment = 1
+
+[node name="CooldownLabel" type="Label" parent="GUI/CenterContainer/PanelContainer/ButtonGroup/CenterContainer/OrganizeAbility" unique_id=485592718]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("9_7yve4")
+theme_type_variation = &"Text"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer2" type="CenterContainer" parent="GUI/CenterContainer/PanelContainer/ButtonGroup" unique_id=1672245929]
+layout_mode = 2
+
+[node name="PaperTigersAbility" type="Button" parent="GUI/CenterContainer/PanelContainer/ButtonGroup/CenterContainer2" unique_id=19986974]
+layout_mode = 2
+disabled = true
+text = "
+"
+icon = ExtResource("8_bccs0")
+flat = true
+icon_alignment = 1
+
+[node name="CooldownLabel" type="Label" parent="GUI/CenterContainer/PanelContainer/ButtonGroup/CenterContainer2/PaperTigersAbility" unique_id=878390681]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("9_7yve4")
+theme_type_variation = &"Text"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="change_speed" from="Ball" to="." method="_on_ball_change_speed"]
+[connection signal="hit_score" from="Ball" to="." method="_on_ball_hit_score"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="GUI/CenterContainer/PanelContainer/ButtonGroup/CenterContainer/OrganizeAbility" to="." method="_on_organize_ability_pressed"]
+[connection signal="pressed" from="GUI/CenterContainer/PanelContainer/ButtonGroup/CenterContainer2/PaperTigersAbility" to="." method="_on_paper_tigers_ability_pressed"]

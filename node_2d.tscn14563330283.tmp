@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://cf77luj3wvewb"]
+
+[ext_resource type="Script" uid="uid://ci1urcib0qw12" path="res://pong.gd" id="1_wtcfe"]
+[ext_resource type="Script" uid="uid://dyf8yintwdmyh" path="res://player.gd" id="2_0e48y"]
+[ext_resource type="Script" uid="uid://bbi0hn53xncfv" path="res://npc.gd" id="3_epypp"]
+[ext_resource type="Script" uid="uid://cmpdb3ndsftaa" path="res://ball.gd" id="4_0hol4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
+size = Vector2(15, 105)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdubu"]
+size = Vector2(15, 405)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
+size = Vector2(15, 15)
+
+[node name="Node2D" type="Node2D" unique_id=1712008745]
+script = ExtResource("1_wtcfe")
+
+[node name="Divider" type="Polygon2D" parent="." unique_id=1721211342]
+position = Vector2(599, 0)
+polygon = PackedVector2Array(0, 0, 5, 0, 5, 600, 0, 600)
+
+[node name="Player" type="Polygon2D" parent="." unique_id=744846952]
+position = Vector2(10, 260)
+polygon = PackedVector2Array(0, 0, 10, 0, 10, 100, 0, 100)
+script = ExtResource("2_0e48y")
+
+[node name="Area2D" type="Area2D" parent="Player" unique_id=1298842739]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D" unique_id=190901880]
+position = Vector2(5, 50)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="Inimigo" type="Polygon2D" parent="." unique_id=2058939261]
+position = Vector2(1139, 260)
+polygon = PackedVector2Array(0, 0, 10, 0, 10, 400, 0, 400)
+script = ExtResource("3_epypp")
+
+[node name="Area2D" type="Area2D" parent="Inimigo" unique_id=566353289]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Inimigo/Area2D" unique_id=1343683476]
+position = Vector2(5, 201)
+shape = SubResource("RectangleShape2D_kdubu")
+
+[node name="Ball" type="Polygon2D" parent="." unique_id=1824744167]
+polygon = PackedVector2Array(0, 0, 0, 10, 10, 10, 10, 0)
+script = ExtResource("4_0hol4")
+
+[node name="Timer" type="Timer" parent="Ball" unique_id=1475800614]
+process_callback = 0
+wait_time = 5.0
+
+[node name="Area2D" type="Area2D" parent="Ball" unique_id=200795730]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball/Area2D" unique_id=1380344958]
+position = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_0hol4")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="." unique_id=2013779588]
+offset_right = 1149.0
+offset_bottom = 95.0
+split_offsets = PackedInt32Array(600)
+split_offset = 600
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer" unique_id=171268759]
+layout_mode = 2
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="HSplitContainer" unique_id=1554445217]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="area_entered" from="Ball/Area2D" to="Ball" method="_on_area_2d_area_entered"]

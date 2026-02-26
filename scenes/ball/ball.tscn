@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://0qss71ok16ci"]
+
+[ext_resource type="Script" uid="uid://cmpdb3ndsftaa" path="res://scenes/ball/ball.gd" id="1_oqv3d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
+size = Vector2(15, 15)
+
+[node name="Ball" type="Polygon2D" unique_id=557146403 groups=["ball"]]
+polygon = PackedVector2Array(0, 0, 0, 10, 10, 10, 10, 0)
+script = ExtResource("1_oqv3d")
+
+[node name="Timer" type="Timer" parent="." unique_id=410041145]
+process_callback = 0
+
+[node name="Area2D" type="Area2D" parent="." unique_id=812062157]
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=698700635]
+position = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_0hol4")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=871301396]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

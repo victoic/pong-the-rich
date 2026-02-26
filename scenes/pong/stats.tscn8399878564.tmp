@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bbpblnhkqkdud"]
+
+[ext_resource type="Script" uid="uid://8jp4v53t5fmf" path="res://scenes/pong/stats.gd" id="1_i5nkb"]
+
+[node name="Stats" type="Node" unique_id=757592005]
+script = ExtResource("1_i5nkb")

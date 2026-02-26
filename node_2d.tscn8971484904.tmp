@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://cf77luj3wvewb"]
+
+[ext_resource type="Script" uid="uid://ci1urcib0qw12" path="res://pong.gd" id="1_wtcfe"]
+[ext_resource type="Script" uid="uid://dyf8yintwdmyh" path="res://player.gd" id="2_0e48y"]
+[ext_resource type="Script" uid="uid://bbi0hn53xncfv" path="res://npc.gd" id="3_epypp"]
+[ext_resource type="Script" uid="uid://cmpdb3ndsftaa" path="res://ball.gd" id="4_0hol4"]
+
+[node name="Node2D" type="Node2D" unique_id=1712008745]
+script = ExtResource("1_wtcfe")
+
+[node name="Divider" type="Polygon2D" parent="." unique_id=1721211342]
+position = Vector2(599, 0)
+scale = Vector2(0.36921316, 1.0798159)
+polygon = PackedVector2Array(0, 0, 10, 0, 10, 600, 0, 600)
+
+[node name="Player" type="Polygon2D" parent="." unique_id=744846952]
+position = Vector2(10, 260)
+polygon = PackedVector2Array(0, 0, 10, 0, 10, 100, 0, 100)
+script = ExtResource("2_0e48y")
+
+[node name="Inimigo" type="Polygon2D" parent="." unique_id=2058939261]
+position = Vector2(1139, 260)
+polygon = PackedVector2Array(0, 0, 10, 0, 10, 400, 0, 400)
+script = ExtResource("3_epypp")
+
+[node name="Ball" type="Polygon2D" parent="." unique_id=1824744167]
+polygon = PackedVector2Array(0, 0, 0, 10, 10, 10, 10, 0)
+script = ExtResource("4_0hol4")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="." unique_id=2013779588]
+offset_right = 1149.0
+offset_bottom = 95.0
+split_offsets = PackedInt32Array(600)
+split_offset = 600
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer" unique_id=171268759]
+layout_mode = 2
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="HSplitContainer" unique_id=1554445217]
+layout_mode = 2
+size_flags_horizontal = 3

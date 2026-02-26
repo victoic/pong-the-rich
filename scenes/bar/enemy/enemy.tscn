@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://d3l00efs8p4hc"]
+
+[ext_resource type="Texture2D" uid="uid://dk4acvkaeyksn" path="res://images/background_bar_enemy.png" id="1_a3pup"]
+[ext_resource type="Script" uid="uid://bbi0hn53xncfv" path="res://scenes/bar/enemy/enemy.gd" id="2_40wdo"]
+[ext_resource type="Resource" uid="uid://cmrdu8wagn4c4" path="res://scenes/bar/enemy/enemy_stats.tres" id="3_5w07l"]
+[ext_resource type="AudioStream" uid="uid://bgrmaxe3xy5it" path="res://resources/audio/enemy_audio_stream_randomizer.tres" id="4_5w07l"]
+[ext_resource type="PackedScene" uid="uid://b7wcp2un8ev5v" path="res://scenes/ability/infiltrate/infiltrate.tscn" id="7_5w07l"]
+[ext_resource type="PackedScene" uid="uid://kb0tydsts5va" path="res://scenes/ability/individualism/individualism.tscn" id="8_0l5r1"]
+[ext_resource type="AnimationLibrary" uid="uid://jnt6ny1nlbht" path="res://animations/animations.res" id="8_t6sdt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdubu"]
+size = Vector2(15, 405)
+
+[node name="Enemy" type="Polygon2D" unique_id=662037036 groups=["enemy"]]
+texture_repeat = 2
+position = Vector2(-5, -200)
+texture = ExtResource("1_a3pup")
+texture_scale = Vector2(2, 2)
+polygon = PackedVector2Array(0, 0, 10, 0, 10, 400, 0, 400)
+script = ExtResource("2_40wdo")
+stats = ExtResource("3_5w07l")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1681662105]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2049247104]
+position = Vector2(5, 201)
+shape = SubResource("RectangleShape2D_kdubu")
+
+[node name="HitAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1690157299]
+stream = ExtResource("4_5w07l")
+
+[node name="PhaseOutAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=205329945]
+
+[node name="InfiltrateAbility" parent="." unique_id=982348908 instance=ExtResource("7_5w07l")]
+
+[node name="IndividualismAbility" parent="." unique_id=454220991 instance=ExtResource("8_0l5r1")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=844629355]
+libraries/animations = ExtResource("8_t6sdt")
+
+[node name="StatusTimer" type="Timer" parent="." unique_id=2112006513]
+
+[node name="Line2D" type="Line2D" parent="." unique_id=2009747737]
+
+[connection signal="timeout" from="StatusTimer" to="." method="_on_status_timer_timeout"]

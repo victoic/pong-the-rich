@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cc4ic3l41rdau"]
+
+[ext_resource type="Script" uid="uid://bcp2c1nstofaw" path="res://scenes/pong/cutscene.gd" id="1_gm4fj"]
+[ext_resource type="Theme" uid="uid://ddb7rbbc2vqwb" path="res://resources/themes/main_theme.tres" id="2_kcgy8"]
+
+[node name="Cutscene" type="Control" unique_id=1140878732]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gm4fj")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1888739614]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 2
+
+[node name="Label" type="Label" parent="." unique_id=1035592660]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_kcgy8")
+theme_type_variation = &"Cutscene"
+text = "Press <enter> or <space> to continue"
+horizontal_alignment = 1
+vertical_alignment = 2

@@ -1,0 +1,6 @@
+[gd_resource type="Resource" format=3 uid="uid://coe1uqdy72eae"]
+
+[ext_resource type="Script" uid="uid://dv6d1juexii0c" path="res://scenes/bar/bar_stats.gd" id="1_phlol"]
+
+[resource]
+script = ExtResource("1_phlol")

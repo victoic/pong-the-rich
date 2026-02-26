@@ -1,0 +1,45 @@
+[gd_resource type="Theme" format=3 uid="uid://ddb7rbbc2vqwb"]
+
+[ext_resource type="StyleBox" uid="uid://bl64hlfl252u2" path="res://resources/styles/button_hover_style.tres" id="1_0wthw"]
+[ext_resource type="StyleBox" uid="uid://l8kolqkfpv3c" path="res://resources/styles/button_normal_style.tres" id="2_dagba"]
+[ext_resource type="StyleBox" uid="uid://lsiykmti55ur" path="res://resources/styles/button_pressed_style.tres" id="3_xtbu8"]
+[ext_resource type="FontFile" uid="uid://yx5fhb7nh40" path="res://fonts/Russian.ttf" id="4_0wthw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0wthw"]
+bg_color = Color(0.36078432, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 0, 1)
+
+[resource]
+default_font = ExtResource("4_0wthw")
+BlockPanel/base_type = &"Panel"
+BlockPanel/styles/panel = SubResource("StyleBoxFlat_0wthw")
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 0, 1)
+Button/font_sizes/font_size = 32
+Button/styles/hover = ExtResource("1_0wthw")
+Button/styles/normal = ExtResource("2_dagba")
+Button/styles/pressed = ExtResource("3_xtbu8")
+Cutscene/base_type = &"Label"
+Cutscene/colors/font_color = Color(1, 1, 1, 1)
+Cutscene/colors/font_outline_color = Color(0, 0, 0, 1)
+Cutscene/constants/outline_size = 5
+Cutscene/fonts/font = ExtResource("4_0wthw")
+Text/base_type = &"Cutscene"
+Text/colors/font_color = Color(1, 0, 0, 1)
+Text/colors/font_outline_color = Color(1, 1, 0, 1)
+Text/colors/font_shadow_color = Color(0, 0, 0, 0)
+Text/constants/outline_size = 5
+Text/constants/shadow_offset_y = 5
+Text/constants/shadow_outline_size = 5
+Title/base_type = &"Cutscene"
+Title/colors/font_color = Color(1, 0, 0, 1)
+Title/colors/font_outline_color = Color(1, 1, 0, 1)
+Title/constants/outline_size = 10
+Title/constants/shadow_offset_x = 1
+Title/constants/shadow_offset_y = 5
+Title/constants/shadow_outline_size = 5
+Title/font_sizes/font_size = 80

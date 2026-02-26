@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="BarStats" format=3 uid="uid://cmrdu8wagn4c4"]
+
+[ext_resource type="Script" uid="uid://dv6d1juexii0c" path="res://scenes/bar/bar_stats.gd" id="1_earbl"]
+
+[resource]
+script = ExtResource("1_earbl")
+height = 400.0
