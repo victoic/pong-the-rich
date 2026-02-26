@@ -188,15 +188,19 @@ func _on_timer_timeout() -> void:
 func _on_organize_ability_pressed() -> void:
 	player.organize_ability.use()
 	organize_button.disabled = true
+	organize_button.get_node("ShortcutLabel").theme_type_variation = "LabelDisabled"
 
 func _on_organize_ability_timer_timeout() -> void:
 	organize_button.disabled = false
+	organize_button.get_node("ShortcutLabel").theme_type_variation = "Text"
 	organize_button.get_node("CooldownLabel").text = ""
 
 func _on_paper_tigers_ability_pressed() -> void:
 	player.paper_tigers_ability.use()
 	paper_tigers_button.disabled = true
+	paper_tigers_button.get_node("ShortcutLabel").theme_type_variation = "LabelDisabled"
 
 func _on_paper_tigers_ability_timer_timeout() -> void:
 	paper_tigers_button.disabled = false
 	paper_tigers_button.get_node("CooldownLabel").text = ""
+	paper_tigers_button.get_node("ShortcutLabel").theme_type_variation = "Text"
