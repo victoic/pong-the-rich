@@ -136,7 +136,7 @@ text = "0"
 layout_mode = 2
 theme = ExtResource("2_glmrg")
 theme_type_variation = &"Cutscene"
-text = "Total Wins - Player"
+text = "Total Score - Player"
 
 [node name="TotalPlayerPointsValue" type="Label" parent="StatsPanel/CenterContainer2/GridContainer" unique_id=815484868]
 layout_mode = 2
