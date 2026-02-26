@@ -187,18 +187,17 @@ vertical_alignment = 1
 [node name="ShortcutLabel" type="Label" parent="GUI/CenterContainer/PanelContainer/ButtonGroup/CenterContainer/OrganizeAbility" unique_id=1857817360]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.074
+anchor_left = 0.102000006
 anchor_top = 0.056
 anchor_right = 0.37
 anchor_bottom = 0.26900002
-offset_left = -7.992
+offset_left = -0.016000748
 offset_top = -0.048000336
-offset_right = -7.959999
+offset_right = 0.040000916
 offset_bottom = -0.052001953
 theme = ExtResource("9_7yve4")
 theme_type_variation = &"LabelDisabled"
 text = "Q"
-horizontal_alignment = 1
 
 [node name="CenterContainer2" type="CenterContainer" parent="GUI/CenterContainer/PanelContainer/ButtonGroup" unique_id=1672245929]
 layout_mode = 2
@@ -228,18 +227,17 @@ vertical_alignment = 1
 [node name="ShortcutLabel" type="Label" parent="GUI/CenterContainer/PanelContainer/ButtonGroup/CenterContainer2/PaperTigersAbility" unique_id=865121044]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.074
+anchor_left = 0.093
 anchor_top = 0.056
 anchor_right = 0.37
 anchor_bottom = 0.26900002
-offset_left = -7.992
+offset_left = -0.044000626
 offset_top = -0.048000336
-offset_right = -7.959999
+offset_right = 0.040000916
 offset_bottom = -0.052001953
 theme = ExtResource("9_7yve4")
 theme_type_variation = &"LabelDisabled"
 text = "E"
-horizontal_alignment = 1
 
 [connection signal="change_speed" from="Ball" to="." method="_on_ball_change_speed"]
 [connection signal="hit_score" from="Ball" to="." method="_on_ball_hit_score"]

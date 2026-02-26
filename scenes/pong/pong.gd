@@ -46,7 +46,9 @@ func start_with_debug() -> void:
 	player.stats.score = 49
 	enemy.stats.score = 49
 	organize_button.disabled = false
+	organize_button.get_node("ShortcutLabel").theme_type_variation = "Text"
 	paper_tigers_button.disabled = false
+	paper_tigers_button.get_node("ShortcutLabel").theme_type_variation = "Text"
 	for i in range(10):
 		_on_comrade_poit_create_comrade()
 
@@ -71,12 +73,12 @@ func _ready() -> void:
 	player.organize_ability.cooldown_timer.timeout.connect(_on_organize_ability_timer_timeout)
 	player.organize_ability.ability_used.connect(change_phrase)
 	player.organize_ability.ability_ended.connect(reset_phrase)
-	organize_button.get_node("CooldownLabel").text = "{0}/{1}".format([player.stats.score, player.organize_ability.requirement])
+	organize_button.get_node("ShortcutLabel").text = "{0}/{1}".format([player.stats.score, player.organize_ability.requirement])
 	
 	player.paper_tigers_ability.cooldown_timer.timeout.connect(_on_paper_tigers_ability_timer_timeout)
 	player.paper_tigers_ability.ability_used.connect(change_phrase)
 	player.paper_tigers_ability.ability_ended.connect(reset_phrase)
-	paper_tigers_button.get_node("CooldownLabel").text = "{0}/{1}".format([player.stats.score, player.paper_tigers_ability.requirement])
+	paper_tigers_button.get_node("ShortcutLabel").text = "{0}/{1}".format([player.stats.score, player.paper_tigers_ability.requirement])
 	
 	ball.setup(half_viewport)
 	point_timer.start()
@@ -145,15 +147,17 @@ func _on_ball_hit_score(side: int) -> void:
 		
 		if player.score == player.organize_ability.requirement:
 			organize_button.disabled = false
-			organize_button.get_node("CooldownLabel").text = ""
+			organize_button.get_node("ShortcutLabel").text = "Q"
+			organize_button.get_node("ShortcutLabel").theme_type_variation = "Text"
 		elif player.score < player.organize_ability.requirement:
-			organize_button.get_node("CooldownLabel").text = "{0}/{1}".format([player.score, player.organize_ability.requirement])
+			organize_button.get_node("ShortcutLabel").text = "{0}/{1}".format([player.score, player.organize_ability.requirement])
 		
 		if player.score == player.paper_tigers_ability.requirement:
 			paper_tigers_button.disabled = false
-			paper_tigers_button.get_node("CooldownLabel").text = ""
+			paper_tigers_button.get_node("ShortcutLabel").text = "E"
+			paper_tigers_button.get_node("ShortcutLabel").theme_type_variation = "Text"
 		elif player.score < player.paper_tigers_ability.requirement:
-			paper_tigers_button.get_node("CooldownLabel").text = "{0}/{1}".format([player.score, player.paper_tigers_ability.requirement])
+			paper_tigers_button.get_node("ShortcutLabel").text = "{0}/{1}".format([player.score, player.paper_tigers_ability.requirement])
 		
 		for points in backgrounds:
 			if points == player.score:
