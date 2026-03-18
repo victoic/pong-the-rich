@@ -6,7 +6,7 @@ class_name Pong extends Node2D
 @onready var ball: Ball = $Ball
 
 @onready var point_timer: Timer = $Timer
-@onready var phrase: Label = $Phrase
+@onready var phrase: Label = $GUI/Phrase
 
 @onready var comrades_points: Node2D = $ComradesPoints
 @onready var comrades: Node2D = $Comrades
@@ -177,7 +177,7 @@ func _on_ball_hit_score(side: int) -> void:
 		timer.stop()
 		timer.timeout.connect(_on_endgame_timer_timeout)
 		timer.start(10)
-		$HelpLabel.visible = true
+		$GUI/HelpLabel.visible = true
 		Stats.save_config(player.score, enemy.score, player.score >= 50, comrades.get_child_count())
 	point_timer.start()
 

@@ -81,29 +81,6 @@ offset_right = 44.0
 offset_bottom = 59.0
 text = "Velocidade:"
 
-[node name="Phrase" type="Label" parent="." unique_id=425232642]
-offset_top = 85.0
-offset_right = 1150.0
-offset_bottom = 195.0
-size_flags_horizontal = 3
-theme = ExtResource("9_7yve4")
-theme_type_variation = &"Text"
-label_settings = ExtResource("6_7yve4")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HelpLabel" type="Label" parent="." unique_id=1550762689]
-visible = false
-offset_top = 16.0
-offset_right = 1150.0
-offset_bottom = 126.0
-size_flags_horizontal = 3
-theme = ExtResource("9_7yve4")
-theme_type_variation = &"Cutscene"
-text = "Press <ESC>, <R>, or <Backspace> to Return to the menu"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Timer" type="Timer" parent="." unique_id=1037475652]
 wait_time = 20.0
 
@@ -116,6 +93,39 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 1149.0
 offset_bottom = 646.0
+
+[node name="Phrase" type="Label" parent="GUI" unique_id=425232642]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.132
+anchor_right = 1.0
+anchor_bottom = 0.30200002
+offset_top = -0.27200317
+offset_right = 1.0
+offset_bottom = -0.0920105
+size_flags_horizontal = 3
+theme = ExtResource("9_7yve4")
+theme_type_variation = &"Text"
+label_settings = ExtResource("6_7yve4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HelpLabel" type="Label" parent="GUI" unique_id=1550762689]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.025
+anchor_right = 1.0
+anchor_bottom = 0.19500001
+offset_top = -0.14999962
+offset_right = 1.0
+offset_bottom = 0.02999878
+size_flags_horizontal = 3
+theme = ExtResource("9_7yve4")
+theme_type_variation = &"Cutscene"
+text = "Press <ESC>, <R>, or <Backspace> to Return to the menu"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="HSplitContainer" type="HSplitContainer" parent="GUI" unique_id=2013779588]
 layout_mode = 1

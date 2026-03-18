@@ -27,12 +27,18 @@ texture = ExtResource("2_oj1v1")
 expand_mode = 2
 
 [node name="StarTextureRect" type="TextureRect" parent="." unique_id=827908633]
-visible = false
-layout_mode = 0
-offset_left = 253.0
-offset_top = 63.0
-offset_right = 353.0
-offset_bottom = 163.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0050000004
+anchor_top = 0.147
+anchor_right = 1.0
+anchor_bottom = 0.208
+offset_left = 247.24
+offset_top = -32.255997
+offset_right = -799.0
+offset_bottom = 28.216003
+grow_horizontal = 2
+grow_vertical = 2
 rotation = -0.5235988
 texture = ExtResource("3_oj1v1")
 
