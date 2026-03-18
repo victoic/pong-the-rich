@@ -11,11 +11,11 @@ config_version=5
 [application]
 
 config/name="Pong the Rich"
-config/version="1.1.0.3"
+config/version="1.1.1"
 config/tags=PackedStringArray("20games", "communism", "pong", "socialism")
 run/main_scene="uid://b32ys1qcl6g2l"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://images/icon/pong-the-rich-icon.ico"
+config/icon="uid://dviand7m0doqa"
 
 [autoload]
 

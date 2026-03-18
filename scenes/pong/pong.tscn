@@ -47,10 +47,14 @@ events = [SubResource("InputEventKey_lpsvd"), SubResource("InputEventKey_ks02o")
 script = ExtResource("1_o18ce")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=46884882]
-offset_right = 1150.0
-offset_bottom = 646.0
+custom_minimum_size = Vector2(1152, 648)
+anchors_preset = -1
+anchor_right = 1.667
+anchor_bottom = 1.667
+offset_right = 1152.0
+offset_bottom = 648.0
 texture = ExtResource("2_xk3oe")
-expand_mode = 2
+expand_mode = 1
 
 [node name="Divider" type="Polygon2D" parent="." unique_id=1721211342]
 position = Vector2(599, 0)
@@ -114,9 +118,11 @@ offset_right = 1149.0
 offset_bottom = 646.0
 
 [node name="HSplitContainer" type="HSplitContainer" parent="GUI" unique_id=2013779588]
-layout_mode = 0
-offset_right = 1149.0
-offset_bottom = 95.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.147
+offset_bottom = 0.038002014
 split_offsets = PackedInt32Array(600)
 split_offset = 600
 
@@ -147,10 +153,11 @@ horizontal_alignment = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="GUI" unique_id=377140552]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 507.0
+offset_top = -122.0
 grow_horizontal = 2
 grow_vertical = 2
 

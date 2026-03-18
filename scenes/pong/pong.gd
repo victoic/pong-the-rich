@@ -84,6 +84,7 @@ func _ready() -> void:
 	point_timer.start()
 	$GUI.size = get_viewport_rect().size
 	$GUI/CenterContainer.size.x = get_viewport_rect().size.x
+	background_texture.size = get_viewport_rect().size
 
 func choose_coord() -> Vector2:
 	divider.position.x
@@ -127,7 +128,7 @@ func _process(delta: float) -> void:
 		if enemy.score >= 50:
 			change_phrase("They have everything to lose, we got nothing, we can't give up!\n{0}".format([int(timer.time_left)]))
 			background_texture.texture = loss_background
-		if Input.is_action_just_pressed("return"):
+		if Input.is_actionbac_just_pressed("return"):
 			get_tree().change_scene_to_file("res://scenes/pong/menu.tscn")
 	if player.organize_ability.cooldown_timer.time_left > 0:
 		var cooldown_time: int = int(player.organize_ability.cooldown_timer.time_left)
@@ -162,6 +163,7 @@ func _on_ball_hit_score(side: int) -> void:
 		for points in backgrounds:
 			if points == player.score:
 				background_texture.texture = backgrounds[points]
+				background_texture.size = get_viewport_rect().size
 				break
 	elif side == LEFT_SIDE:
 		enemy.score+=1
