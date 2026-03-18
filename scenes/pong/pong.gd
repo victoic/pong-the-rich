@@ -128,7 +128,7 @@ func _process(delta: float) -> void:
 		if enemy.score >= 50:
 			change_phrase("They have everything to lose, we got nothing, we can't give up!\n{0}".format([int(timer.time_left)]))
 			background_texture.texture = loss_background
-		if Input.is_actionbac_just_pressed("return"):
+		if Input.is_action_just_pressed("return"):
 			get_tree().change_scene_to_file("res://scenes/pong/menu.tscn")
 	if player.organize_ability.cooldown_timer.time_left > 0:
 		var cooldown_time: int = int(player.organize_ability.cooldown_timer.time_left)
